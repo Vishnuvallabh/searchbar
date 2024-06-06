@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import React , {useState} from 'react';
 import './App.css';
 
+const fruits = [
+  "Apple",
+  "Banana",
+  "Orange",
+  "Strawberry",
+  "Grapes",
+  "Pineapple",
+  "Mango",
+  "Blueberry",
+  "Kiwi",
+  "Watermelon",
+  "Peach",
+  "Cherry",
+  "Pomegranate",
+  "Pear",
+  "Lemon",
+];
+
 function App() {
+  const [searchitem, setSearchItem] = useState("");
+
+    const searchFruits = (e) => {
+    setSearchItem(e.target.value);
+  };
+
+  const filteredItems = fruits.filter((fruit)=> fruit.toLowerCase().includes(searchitem.toLowerCase()));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='background'>
+      <div className='header'> 
+      <p>Yathavakilla's Fruit Shop</p>
+      <p>Welcome to Fresh Fruit Exotica!</p>
+      </div>
+    <div className="container">   
+      <input type='text' className='search-input' placeholder='Search here....' onChange={searchFruits}/>
+      {filteredItems.map((fruit, index)=> (<p key={index} className='fruit-item'>{fruit}</p>))}
+    </div>
     </div>
   );
 }

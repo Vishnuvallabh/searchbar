@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  text-align: center;
+  background-image: url("https://w0.peakpx.com/wallpaper/869/156/HD-wallpaper-village-greengrocer-people-fruits-shop-painting-vegetables-dog-artwork.jpg"); /* Make sure this path is correct */
+  background-size: cover;
+  background-position: center;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid black;
+  width: 500px;
+  border-radius: 8px; 
+  color: black; 
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.search-input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid white;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.fruit-item {
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+  font-size: 22px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+
+.fruit-item:last-child {
+  border-bottom: none;
+}
+
+.header {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.8); /* Optional: Add some background to the header for readability */
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
 }
